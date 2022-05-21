@@ -5,11 +5,10 @@ class ClockViewModel {
 
     init() {
         setupTimer()
+        setTimeInViewModels(time: timeFormatter.string(from: Date()))
     }
 
-    private(set) lazy var flipViewModels = { (0...5).map { _ in FlipViewModel() } }()
-
-    // MARK: - Private
+    private(set) var flipViewModels = (0...5).map { _ in FlipViewModel() }
 
     private func setupTimer() {
         Timer.publish(every: 1, on: .main, in: .default)

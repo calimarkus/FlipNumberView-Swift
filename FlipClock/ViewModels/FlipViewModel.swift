@@ -3,12 +3,12 @@ import SwiftUI
 
 class FlipViewModel: ObservableObject, Identifiable {
 
-    var text: String? {
+    var text: String? = "0" {
         didSet { updateTexts(old: oldValue, new: text) }
     }
 
-    @Published var newValue: String?
-    @Published var oldValue: String?
+    @Published var newValue: String? = "0"
+    @Published var oldValue: String? = "0"
 
     @Published var animateTop: Bool = false
     @Published var animateBottom: Bool = false
