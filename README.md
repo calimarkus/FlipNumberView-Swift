@@ -1,13 +1,8 @@
-# Flip clock implementation in SwiftUI
+# A SwiftUI Flip Clock
 
-![Swift: 5.1](https://img.shields.io/badge/Swift-5.1-blue.svg)
-![SwiftUI](https://img.shields.io/badge/UI_framework-SwiftUI-green.svg)
+The simple app displaying the current time with a flip animation.
 
-Flip clock is Simple app written in SwiftUI. The App displays current time with flip animation.
-
-|Light|Dark|
-|:-:|:-:|
-|![Light_preview](Gifs/flip_clock_light.gif)|![Dark_preview](Gifs/flip_clock_dark.gif)|
+![Untitled](https://user-images.githubusercontent.com/807039/169655698-f016c105-1042-4be2-bcde-ec4f5c9dcfc5.gif)
 
 ## License
 
