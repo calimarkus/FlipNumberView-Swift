@@ -11,10 +11,11 @@ struct FlipImageView: View {
                 }
                 if let oldVal = viewModel.oldValue {
                     FlipImageViewHalf(.top, value: Int(oldVal) ?? 0)
-                        .rotation3DEffect(.init(degrees: self.viewModel.animateTop ? -90 : .zero),
-                                          axis: (1, 0, 0),
-                                          anchor: .bottom,
-                                          perspective: 0.5)
+                        .rotation3DEffect(
+                            .init(degrees: self.viewModel.animateTop ? -90 : .zero),
+                            axis: (1, 0, 0),
+                            anchor: .bottom,
+                            perspective: 0.5)
                 }
             }
             ZStack {
@@ -23,10 +24,11 @@ struct FlipImageView: View {
                 }
                 if let newVal = viewModel.newValue {
                     FlipImageViewHalf(.bottom, value: Int(newVal) ?? 0)
-                        .rotation3DEffect(.init(degrees: self.viewModel.animateBottom ? .zero : 90),
-                                          axis: (1, 0, 0),
-                                          anchor: .top,
-                                          perspective: 0.5)
+                        .rotation3DEffect(
+                            .init(degrees: self.viewModel.animateBottom ? .zero : 90),
+                            axis: (1, 0, 0),
+                            anchor: .top,
+                            perspective: 0.5)
                 }
             }
         }
@@ -35,10 +37,8 @@ struct FlipImageView: View {
 
 struct FlipImageView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            let m = FlipViewModel()
-            let _ = m.updateTexts(old: "A", new: "B")
-            FlipImageView(viewModel: m)
-        }
+        let m = FlipViewModel()
+        let _ = m.updateTexts(old: "A", new: "B")
+        FlipImageView(viewModel: m)
     }
 }
