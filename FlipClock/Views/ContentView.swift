@@ -1,15 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-
     var body: some View {
-        VStack {
+        VStack(spacing: 50.0) {
             ClockView(config: FlipTextViewConfig(fontSize: 50.0))
-            Spacer().frame(height: 40.0)
-            ClockView(isTextBased: false)
+            ClockView(isTextBased: false, imageScale: 0.5)
         }
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -17,4 +14,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

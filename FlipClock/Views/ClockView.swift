@@ -5,6 +5,7 @@ struct ClockView: View {
     var innerSpacing = 2.0
     var outerSpacing = 8.0
     var isTextBased = true
+    var imageScale = 1.0
     var config = FlipTextViewConfig()
 
     var body: some View {
@@ -30,13 +31,16 @@ struct ClockView: View {
         if isTextBased {
             FlipTextView(viewModel: viewModel, config: config)
         } else {
-            FlipImageView(viewModel: viewModel)
+            FlipImageView(viewModel: viewModel, scale: imageScale)
         }
     }
 }
 
 struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
-        ClockView()
+        VStack(spacing: 50.0) {
+            ClockView()
+            ClockView(isTextBased: false, imageScale: 0.5)
+        }
     }
 }
