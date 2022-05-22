@@ -18,6 +18,8 @@
 		47F96E492354F3490036311F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E482354F3490036311F /* Assets.xcassets */; };
 		47F96E4F2354F3490036311F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E4D2354F3490036311F /* LaunchScreen.storyboard */; };
 		7EF596CA2839CF0900870696 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EF596C92839CF0900870696 /* JDFlipNumberView.bundle */; };
+		7EF596CC2839D1EA00870696 /* FlipImageViewHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */; };
+		7EF596CE2839DDD800870696 /* FlipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CD2839DDD800870696 /* FlipImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		47F96E4E2354F3490036311F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47F96E502354F3490036311F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EF596C92839CF0900870696 /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
+		7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipImageViewHalf.swift; sourceTree = "<group>"; };
+		7EF596CD2839DDD800870696 /* FlipImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				47DEBEBE2358F91E004E2BCA /* ClockView.swift */,
 				47DEBEC62358F9D5004E2BCA /* FlipView.swift */,
 				47DEBEC22358F96A004E2BCA /* SingleFlipView.swift */,
+				7EF596CD2839DDD800870696 /* FlipImageView.swift */,
+				7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,12 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF596CC2839D1EA00870696 /* FlipImageViewHalf.swift in Sources */,
 				47F96E432354F3480036311F /* FlipClockApp.swift in Sources */,
 				47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */,
 				47F96E472354F3480036311F /* ContentView.swift in Sources */,
 				47DEBEC72358F9D5004E2BCA /* FlipView.swift in Sources */,
 				47DEBEC12358F93C004E2BCA /* FlipViewModel.swift in Sources */,
 				47DEBEBB2358F8C4004E2BCA /* ClockViewModel.swift in Sources */,
+				7EF596CE2839DDD800870696 /* FlipImageView.swift in Sources */,
 				47DEBEBD2358F902004E2BCA /* DateFormatter+TimeFormatter.swift in Sources */,
 				47DEBEC32358F96A004E2BCA /* SingleFlipView.swift in Sources */,
 			);

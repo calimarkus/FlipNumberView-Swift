@@ -17,8 +17,8 @@ struct ClockView: View {
                 FlipView(viewModel: viewModel.flipViewModels[3], config: config)
             }
             HStack(spacing: innerSpacing) {
-                FlipView(viewModel: viewModel.flipViewModels[4], config: config)
-                FlipView(viewModel: viewModel.flipViewModels[5], config: config)
+                FlipImageView(viewModel: viewModel.flipViewModels[4])
+                FlipImageView(viewModel: viewModel.flipViewModels[5])
             }
         }
     }
