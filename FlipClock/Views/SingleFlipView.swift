@@ -18,11 +18,12 @@ struct SingleFlipView: View {
             .font(.custom("Helvetica", size: config.fontSize)
                 .weight(.heavy))
             .foregroundColor(config.textColor)
-            .padding(type.padding, round(config.fontSize / -2.0))
-            .padding(type.paddingEdges, 10.0)
+            .padding(type.clippingEdge, round(config.fontSize / -2.0))
+            .padding(type.verticalPaddingEdge, max(-6.0, (80 - config.fontSize) / 5.0))
+            .padding([.leading, .trailing], 10.0)
             .clipped()
             .background(config.backgroundColor, in:RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-            .padding(type.padding, round(config.fontSize / -12.0))
+            .padding(type.clippingEdge, round(config.fontSize / -12.0))
             .clipped()
     }
 
@@ -30,7 +31,7 @@ struct SingleFlipView: View {
         case top
         case bottom
 
-        var padding: Edge.Set {
+        var clippingEdge: Edge.Set {
             switch self {
             case .top:
                 return .bottom
@@ -39,12 +40,12 @@ struct SingleFlipView: View {
             }
         }
 
-        var paddingEdges: Edge.Set {
+        var verticalPaddingEdge: Edge.Set {
             switch self {
             case .top:
-                return [.top, .leading, .trailing]
+                return [.top]
             case .bottom:
-                return [.bottom, .leading, .trailing]
+                return [.bottom]
             }
         }
 
@@ -60,27 +61,40 @@ struct SingleFlipView: View {
 }
 
 struct SingleFlipView_Previews: PreviewProvider {
+    static let config1 = FlipViewConfig(backgroundColor: .black,
+                                        textColor: .white,
+                                        fontSize: 15.0)
+    static let config2 = FlipViewConfig(backgroundColor: .teal,
+                                        textColor: .black,
+                                        fontSize: 45.0)
+    static let config3 = FlipViewConfig(backgroundColor: .indigo,
+                                        textColor: .white,
+                                        fontSize: 80.0)
+    static let config4 = FlipViewConfig(backgroundColor: .black.opacity(0.15),
+                                        textColor: .teal,
+                                        fontSize: 120.0)
+
     static var previews: some View {
         HStack {
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "0", type: .top, config: FlipViewConfig(fontSize: 15.0))
+                SingleFlipView(text: "0", type: .top, config: config1)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "0", type: .bottom, config: FlipViewConfig(fontSize: 15.0))
+                SingleFlipView(text: "0", type: .bottom, config: config1)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "1", type: .top)
+                SingleFlipView(text: "1", type: .top, config: config2)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "1", type: .bottom)
+                SingleFlipView(text: "1", type: .bottom, config: config2)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "2", type: .top, config: FlipViewConfig(fontSize: 80.0))
+                SingleFlipView(text: "2", type: .top, config: config3)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "2", type: .bottom, config: FlipViewConfig(fontSize: 80.0))
+                SingleFlipView(text: "2", type: .bottom, config: config3)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "3", type: .top, config: FlipViewConfig(fontSize: 120.0))
+                SingleFlipView(text: "3", type: .top, config: config4)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "3", type: .bottom, config: FlipViewConfig(fontSize: 120.0))
+                SingleFlipView(text: "3", type: .bottom, config: config4)
             }.fixedSize()
         }
     }
