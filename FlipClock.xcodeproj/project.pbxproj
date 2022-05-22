@@ -14,8 +14,7 @@
 		47DEBEC32358F96A004E2BCA /* SingleFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC22358F96A004E2BCA /* SingleFlipView.swift */; };
 		47DEBEC52358F9B2004E2BCA /* Color+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */; };
 		47DEBEC72358F9D5004E2BCA /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC62358F9D5004E2BCA /* FlipView.swift */; };
-		47F96E432354F3480036311F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E422354F3480036311F /* AppDelegate.swift */; };
-		47F96E452354F3480036311F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E442354F3480036311F /* SceneDelegate.swift */; };
+		47F96E432354F3480036311F /* FlipClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E422354F3480036311F /* FlipClockApp.swift */; };
 		47F96E472354F3480036311F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E462354F3480036311F /* ContentView.swift */; };
 		47F96E492354F3490036311F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E482354F3490036311F /* Assets.xcassets */; };
 		47F96E4F2354F3490036311F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E4D2354F3490036311F /* LaunchScreen.storyboard */; };
@@ -30,8 +29,7 @@
 		47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Colors.swift"; sourceTree = "<group>"; };
 		47DEBEC62358F9D5004E2BCA /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 		47F96E3F2354F3480036311F /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		47F96E422354F3480036311F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47F96E442354F3480036311F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		47F96E422354F3480036311F /* FlipClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockApp.swift; sourceTree = "<group>"; };
 		47F96E462354F3480036311F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		47F96E482354F3490036311F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47F96E4E2354F3490036311F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,15 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47DEBEC82358FA1A004E2BCA /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				47F96E422354F3480036311F /* AppDelegate.swift */,
-				47F96E442354F3480036311F /* SceneDelegate.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
 		47DEBEC92358FA3C004E2BCA /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,24 +68,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		47DEBECB2358FA55004E2BCA /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */,
-				47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		47DEBECC2358FA5A004E2BCA /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */,
-				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		47F96E362354F3480036311F = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +87,13 @@
 		47F96E412354F3480036311F /* FlipClock */ = {
 			isa = PBXGroup;
 			children = (
-				47DEBEC82358FA1A004E2BCA /* Application */,
-				47DEBECC2358FA5A004E2BCA /* Extensions */,
-				47DEBEC92358FA3C004E2BCA /* SupportingFiles */,
-				47DEBECB2358FA55004E2BCA /* ViewModels */,
+				47F96E422354F3480036311F /* FlipClockApp.swift */,
+				47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */,
+				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
+				47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */,
+				47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */,
 				47DEBECA2358FA4F004E2BCA /* Views */,
+				47DEBEC92358FA3C004E2BCA /* SupportingFiles */,
 			);
 			path = FlipClock;
 			sourceTree = "<group>";
@@ -152,7 +125,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Maciej Gomółka";
 				TargetAttributes = {
 					47F96E3E2354F3480036311F = {
@@ -195,9 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F96E432354F3480036311F /* AppDelegate.swift in Sources */,
+				47F96E432354F3480036311F /* FlipClockApp.swift in Sources */,
 				47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */,
-				47F96E452354F3480036311F /* SceneDelegate.swift in Sources */,
 				47DEBEC52358F9B2004E2BCA /* Color+Colors.swift in Sources */,
 				47F96E472354F3480036311F /* ContentView.swift in Sources */,
 				47DEBEC72358F9D5004E2BCA /* FlipView.swift in Sources */,
@@ -249,6 +221,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -273,7 +246,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -309,6 +281,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -327,7 +300,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
