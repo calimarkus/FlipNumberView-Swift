@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ClockView: View {
-    let viewModel = ClockViewModel()
+    var viewModel = ClockViewModel()
     var innerSpacing = 2.0
     var outerSpacing = 8.0
     var isTextBased = true

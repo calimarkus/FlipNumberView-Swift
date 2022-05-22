@@ -1,14 +1,21 @@
 import Foundation
 import Combine
+import SwiftUI
 
 class ClockViewModel {
 
-    init() {
+    let animationDuration:Double
+    let flipViewModels: [FlipViewModel]
+
+    init(animationDuration: Double = 0.4) {
+        self.animationDuration = animationDuration
+        self.flipViewModels = (0...5).map { _ in
+            FlipViewModel(duration: animationDuration, text: "0")
+        }
+
         setupTimer()
         setTimeInViewModels(time: timeFormatter.string(from: Date()))
     }
-
-    private(set) var flipViewModels = (0...5).map { _ in FlipViewModel() }
 
     private func setupTimer() {
         Timer.publish(every: 1, on: .main, in: .default)
