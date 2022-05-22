@@ -2,7 +2,7 @@
 
 The simple app displaying the current time with a flip animation.
 
-![Untitled](https://user-images.githubusercontent.com/807039/169655698-f016c105-1042-4be2-bcde-ec4f5c9dcfc5.gif)
+![Screencast](https://user-images.githubusercontent.com/807039/169682230-c16cba20-6caf-4555-bbdf-417c04ca4b03.gif)
 
 ## License
 
