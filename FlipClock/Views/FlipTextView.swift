@@ -7,7 +7,6 @@ struct FlipTextViewConfig {
 }
 
 struct FlipTextView: View {
-
     @ObservedObject var viewModel: FlipViewModel
 
     var config = FlipTextViewConfig()
@@ -18,21 +17,29 @@ struct FlipTextView: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                FlipTextViewHalf(text: viewModel.newValue ?? "", type: .top, config: config)
-                FlipTextViewHalf(text: viewModel.oldValue ?? "", type: .top, config: config)
-                    .rotation3DEffect(.init(degrees: self.viewModel.animateTop ? -90 : .zero),
-                                      axis: (1, 0, 0),
-                                      anchor: .bottom,
-                                      perspective: 0.5)
+                if let newVal = viewModel.newValue {
+                    FlipTextViewHalf(text: newVal, type: .top, config: config)
+                }
+                if let oldVal = viewModel.oldValue {
+                    FlipTextViewHalf(text: oldVal, type: .top, config: config)
+                        .rotation3DEffect(.init(degrees: viewModel.animateTop ? -90 : 0),
+                                          axis: (1, 0, 0),
+                                          anchor: .bottom,
+                                          perspective: 0.5)
+                }
             }
             Color.black.frame(height: separatorHeight)
             ZStack {
-                FlipTextViewHalf(text: viewModel.oldValue ?? "", type: .bottom, config: config)
-                FlipTextViewHalf(text: viewModel.newValue ?? "", type: .bottom, config: config)
-                    .rotation3DEffect(.init(degrees: self.viewModel.animateBottom ? .zero : 90),
-                                      axis: (1, 0, 0),
-                                      anchor: .top,
-                                      perspective: 0.5)
+                if let oldVal = viewModel.oldValue {
+                    FlipTextViewHalf(text: oldVal, type: .bottom, config: config)
+                }
+                if let newVal = viewModel.newValue {
+                    FlipTextViewHalf(text: newVal, type: .bottom, config: config)
+                        .rotation3DEffect(.init(degrees: viewModel.animateBottom ? 0 : 90),
+                                          axis: (1, 0, 0),
+                                          anchor: .top,
+                                          perspective: 0.5)
+                }
             }
         }
         .fixedSize()
