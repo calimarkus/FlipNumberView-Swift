@@ -1,12 +1,12 @@
 import SwiftUI
 
-struct SingleFlipView: View {
+struct FlipTextViewHalf: View {
     // content
     let text: String
 
     // config
     let type: FlipType
-    var config: FlipViewConfig = FlipViewConfig()
+    var config: FlipTextViewConfig = FlipTextViewConfig()
 
     // derived
     var cornerRadius: Double {
@@ -60,41 +60,41 @@ struct SingleFlipView: View {
     }
 }
 
-struct SingleFlipView_Previews: PreviewProvider {
-    static let config1 = FlipViewConfig(backgroundColor: .black,
+struct FlipTextViewHalf_Previews: PreviewProvider {
+    static let config1 = FlipTextViewConfig(backgroundColor: .black,
                                         textColor: .white,
                                         fontSize: 15.0)
-    static let config2 = FlipViewConfig(backgroundColor: .teal,
+    static let config2 = FlipTextViewConfig(backgroundColor: .teal,
                                         textColor: .black,
                                         fontSize: 45.0)
-    static let config3 = FlipViewConfig(backgroundColor: .indigo,
+    static let config3 = FlipTextViewConfig(backgroundColor: .indigo,
                                         textColor: .white,
                                         fontSize: 80.0)
-    static let config4 = FlipViewConfig(backgroundColor: .black.opacity(0.15),
+    static let config4 = FlipTextViewConfig(backgroundColor: .black.opacity(0.15),
                                         textColor: .teal,
                                         fontSize: 120.0)
 
     static var previews: some View {
         HStack {
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "0", type: .top, config: config1)
+                FlipTextViewHalf(text: "0", type: .top, config: config1)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "0", type: .bottom, config: config1)
+                FlipTextViewHalf(text: "0", type: .bottom, config: config1)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "1", type: .top, config: config2)
+                FlipTextViewHalf(text: "1", type: .top, config: config2)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "1", type: .bottom, config: config2)
+                FlipTextViewHalf(text: "1", type: .bottom, config: config2)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "2", type: .top, config: config3)
+                FlipTextViewHalf(text: "2", type: .top, config: config3)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "2", type: .bottom, config: config3)
+                FlipTextViewHalf(text: "2", type: .bottom, config: config3)
             }.fixedSize()
             VStack(spacing: 0.0) {
-                SingleFlipView(text: "3", type: .top, config: config4)
+                FlipTextViewHalf(text: "3", type: .top, config: config4)
                 Spacer().frame(height: 1.0)
-                SingleFlipView(text: "3", type: .bottom, config: config4)
+                FlipTextViewHalf(text: "3", type: .bottom, config: config4)
             }.fixedSize()
         }
     }

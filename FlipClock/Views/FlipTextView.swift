@@ -1,16 +1,16 @@
 import SwiftUI
 
-struct FlipViewConfig {
+struct FlipTextViewConfig {
     var backgroundColor = Color.black
     var textColor = Color.white
     var fontSize = 30.0
 }
 
-struct FlipView: View {
+struct FlipTextView: View {
 
     @ObservedObject var viewModel: FlipViewModel
 
-    var config = FlipViewConfig()
+    var config = FlipTextViewConfig()
     var separatorHeight: Double {
         max(1.0, round(config.fontSize / 20.0))
     }
@@ -18,8 +18,8 @@ struct FlipView: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                SingleFlipView(text: viewModel.newValue ?? "", type: .top, config: config)
-                SingleFlipView(text: viewModel.oldValue ?? "", type: .top, config: config)
+                FlipTextViewHalf(text: viewModel.newValue ?? "", type: .top, config: config)
+                FlipTextViewHalf(text: viewModel.oldValue ?? "", type: .top, config: config)
                     .rotation3DEffect(.init(degrees: self.viewModel.animateTop ? -90 : .zero),
                                       axis: (1, 0, 0),
                                       anchor: .bottom,
@@ -27,8 +27,8 @@ struct FlipView: View {
             }
             Color.black.frame(height: separatorHeight)
             ZStack {
-                SingleFlipView(text: viewModel.oldValue ?? "", type: .bottom, config: config)
-                SingleFlipView(text: viewModel.newValue ?? "", type: .bottom, config: config)
+                FlipTextViewHalf(text: viewModel.oldValue ?? "", type: .bottom, config: config)
+                FlipTextViewHalf(text: viewModel.newValue ?? "", type: .bottom, config: config)
                     .rotation3DEffect(.init(degrees: self.viewModel.animateBottom ? .zero : 90),
                                       axis: (1, 0, 0),
                                       anchor: .top,
@@ -39,12 +39,12 @@ struct FlipView: View {
     }
 }
 
-struct FlipView_Previews: PreviewProvider {
+struct FlipTextView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             let m = FlipViewModel()
             let _ = m.updateTexts(old: "A", new: "B")
-            FlipView(viewModel: m)
+            FlipTextView(viewModel: m)
         }
     }
 }
