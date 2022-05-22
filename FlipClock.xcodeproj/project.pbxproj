@@ -12,7 +12,6 @@
 		47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBE2358F91E004E2BCA /* ClockView.swift */; };
 		47DEBEC12358F93C004E2BCA /* FlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */; };
 		47DEBEC32358F96A004E2BCA /* SingleFlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC22358F96A004E2BCA /* SingleFlipView.swift */; };
-		47DEBEC52358F9B2004E2BCA /* Color+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */; };
 		47DEBEC72358F9D5004E2BCA /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC62358F9D5004E2BCA /* FlipView.swift */; };
 		47F96E432354F3480036311F /* FlipClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E422354F3480036311F /* FlipClockApp.swift */; };
 		47F96E472354F3480036311F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E462354F3480036311F /* ContentView.swift */; };
@@ -26,7 +25,6 @@
 		47DEBEBE2358F91E004E2BCA /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewModel.swift; sourceTree = "<group>"; };
 		47DEBEC22358F96A004E2BCA /* SingleFlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFlipView.swift; sourceTree = "<group>"; };
-		47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Colors.swift"; sourceTree = "<group>"; };
 		47DEBEC62358F9D5004E2BCA /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 		47F96E3F2354F3480036311F /* FlipClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47F96E422354F3480036311F /* FlipClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockApp.swift; sourceTree = "<group>"; };
@@ -60,8 +58,8 @@
 		47DEBECA2358FA4F004E2BCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				47DEBEBE2358F91E004E2BCA /* ClockView.swift */,
 				47F96E462354F3480036311F /* ContentView.swift */,
+				47DEBEBE2358F91E004E2BCA /* ClockView.swift */,
 				47DEBEC62358F9D5004E2BCA /* FlipView.swift */,
 				47DEBEC22358F96A004E2BCA /* SingleFlipView.swift */,
 			);
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				47F96E422354F3480036311F /* FlipClockApp.swift */,
-				47DEBEC42358F9B2004E2BCA /* Color+Colors.swift */,
 				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
 				47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */,
 				47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */,
@@ -170,7 +167,6 @@
 			files = (
 				47F96E432354F3480036311F /* FlipClockApp.swift in Sources */,
 				47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */,
-				47DEBEC52358F9B2004E2BCA /* Color+Colors.swift in Sources */,
 				47F96E472354F3480036311F /* ContentView.swift in Sources */,
 				47DEBEC72358F9D5004E2BCA /* FlipView.swift in Sources */,
 				47DEBEC12358F93C004E2BCA /* FlipViewModel.swift in Sources */,

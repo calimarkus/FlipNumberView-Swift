@@ -4,7 +4,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ClockView(fontSize: 80.0)
+            ClockView(config: FlipViewConfig(fontSize: 80.0))
         }
     }
 
