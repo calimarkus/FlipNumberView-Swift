@@ -4,22 +4,33 @@ struct ClockView: View {
     let viewModel = ClockViewModel()
     var innerSpacing = 2.0
     var outerSpacing = 8.0
+    var isTextBased = true
     var config = FlipTextViewConfig()
 
     var body: some View {
         HStack(spacing: outerSpacing) {
             HStack(spacing: innerSpacing) {
-                FlipTextView(viewModel: viewModel.flipViewModels[0], config: config)
-                FlipTextView(viewModel: viewModel.flipViewModels[1], config: config)
+                flipViewAtIndex(0)
+                flipViewAtIndex(1)
             }
             HStack(spacing: innerSpacing) {
-                FlipTextView(viewModel: viewModel.flipViewModels[2], config: config)
-                FlipTextView(viewModel: viewModel.flipViewModels[3], config: config)
+                flipViewAtIndex(2)
+                flipViewAtIndex(3)
             }
             HStack(spacing: innerSpacing) {
-                FlipImageView(viewModel: viewModel.flipViewModels[4])
-                FlipImageView(viewModel: viewModel.flipViewModels[5])
+                flipViewAtIndex(4)
+                flipViewAtIndex(5)
             }
+        }
+    }
+
+    @ViewBuilder
+    func flipViewAtIndex(_ idx: Int) -> some View {
+        let viewModel = viewModel.flipViewModels[idx]
+        if isTextBased {
+            FlipTextView(viewModel: viewModel, config: config)
+        } else {
+            FlipImageView(viewModel: viewModel)
         }
     }
 }

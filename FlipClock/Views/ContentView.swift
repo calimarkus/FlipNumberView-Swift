@@ -4,7 +4,9 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            ClockView(config: FlipTextViewConfig(fontSize: 80.0))
+            ClockView(config: FlipTextViewConfig(fontSize: 50.0))
+            Spacer().frame(height: 40.0)
+            ClockView(isTextBased: false)
         }
     }
 
