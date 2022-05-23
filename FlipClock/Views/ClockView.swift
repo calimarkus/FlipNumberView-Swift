@@ -6,7 +6,7 @@ struct ClockView: View {
     var outerSpacing = 8.0
     var isTextBased = true
     var imageScale = 1.0
-    var config = FlipTextViewConfig()
+    var config = FlipTextViewConfig(fontSize: 50.0)
 
     var body: some View {
         HStack(spacing: outerSpacing) {
@@ -40,7 +40,8 @@ struct ClockView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 50.0) {
             ClockView()
-            ClockView(isTextBased: false, imageScale: 0.5)
+            ClockView(isTextBased: false, imageScale: 0.6)
         }
+        .macOnlyPadding(100.0)
     }
 }

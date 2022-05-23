@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct FlipTextViewConfig {
-    var backgroundColor = Color.black
-    var textColor = Color.white
-    var fontSize = 30.0
+    var backgroundColor = Color.clockBackgroundColor
+    var textColor = Color.clockTextColor
+    var fontSize = 80.0
 }
 
 struct FlipTextView: View {
@@ -11,7 +11,7 @@ struct FlipTextView: View {
 
     var config = FlipTextViewConfig()
     var separatorHeight: Double {
-        max(1.0, round(config.fontSize / 20.0))
+        max(1.0, round(config.fontSize / 40.0))
     }
 
     var body: some View {
@@ -28,7 +28,7 @@ struct FlipTextView: View {
                                           perspective: 0.5)
                 }
             }
-            Color.black.frame(height: separatorHeight)
+            Color.clockTextColor.frame(height: separatorHeight)
             ZStack {
                 if let oldVal = viewModel.oldValue {
                     FlipTextViewHalf(text: oldVal, type: .bottom, config: config)
@@ -47,11 +47,14 @@ struct FlipTextView: View {
 }
 
 struct FlipTextView_Previews: PreviewProvider {
+    @State static var viewModel = ClockViewModel(animationDuration: 0.9)
+
     static var previews: some View {
         Group {
-            let m = FlipViewModel()
-            let _ = m.updateTexts(old: "A", new: "B")
-            FlipTextView(viewModel: m)
+            let m = viewModel.flipViewModels[5]
+            FlipTextView(viewModel: m).preferredColorScheme(.light)
+            FlipTextView(viewModel: m).preferredColorScheme(.dark)
         }
+        .macOnlyPadding(40.0)
     }
 }

@@ -5,20 +5,25 @@ struct ContentView: View {
         VStack(spacing: 10.0) {
             Spacer()
 
-            Text("Text based:").foregroundColor(.black)
-            ClockView(config: FlipTextViewConfig(fontSize: 50.0))
+            Text("Text based:")
+            ClockView()
             Spacer().frame(height: 10.0)
-            Text("Image based:").foregroundColor(.black)
+            Text("Image based:")
             ClockView(viewModel: ClockViewModel(animationDuration: 0.66),
                 isTextBased: false, imageScale: 0.6)
 
             Spacer()
         }
+        #if os(macOS)
+        .padding(100.0)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        #endif
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().preferredColorScheme(.light)
+        ContentView().preferredColorScheme(.dark)
     }
 }

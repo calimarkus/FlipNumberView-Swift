@@ -27,18 +27,34 @@ struct FlipImageViewHalf: View {
     }
 
     var body: some View {
-        if let bundle = Bundle.main.path(forResource: "JDFlipNumberView.bundle", ofType: nil),
-           let img = UIImage(contentsOfFile: bundle.appending("/\(value).png"))
-        {
-            Image(uiImage: img)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: img.size.width * scale, height: img.size.height * scale)
-                .padding(paddingEdge, -img.size.height / 2.0 * scale)
-                .clipped()
+        if let bundle = Bundle.main.path(forResource: "JDFlipNumberView.bundle", ofType: nil) {
+            let imagePath = bundle.appending("/\(value).png")
+            if let (image, width, height) = platformImage(imagePath: imagePath) {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width * scale, height: height * scale)
+                    .padding(paddingEdge, -height / 2.0 * scale)
+                    .clipped()
+            } else {
+                Text("[image n/a]")
+            }
         } else {
-            Text("[img n/a]")
+            Text("[bundle n/a]")
         }
+    }
+
+    func platformImage(imagePath: String) -> (Image, Double, Double)? {
+        #if os(iOS)
+        if let img = UIImage(contentsOfFile: imagePath) {
+            return (Image(uiImage: img), Double(img.size.width), Double(img.size.height))
+        }
+        #elseif os(macOS)
+        if let img = NSImage(contentsOfFile: imagePath) {
+            return (Image(nsImage: img), Double(img.size.width), Double(img.size.height))
+        }
+        #endif
+        return nil
     }
 }
 
@@ -66,5 +82,6 @@ struct FlipImageViewHalf_Previews: PreviewProvider {
                 FlipImageViewHalf(.bottom, value: 4, scale: 0.33)
             }
         }
+        .macOnlyPadding(100.0)
     }
 }

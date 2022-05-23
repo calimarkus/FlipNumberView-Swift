@@ -42,5 +42,6 @@ struct FlipImageView_Previews: PreviewProvider {
         let m = FlipViewModel()
         let _ = m.updateTexts(old: "A", new: "B")
         FlipImageView(viewModel: m, scale: 0.75)
+            .macOnlyPadding(100.0)
     }
 }

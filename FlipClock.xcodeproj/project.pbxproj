@@ -17,6 +17,22 @@
 		47F96E472354F3480036311F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E462354F3480036311F /* ContentView.swift */; };
 		47F96E492354F3490036311F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E482354F3490036311F /* Assets.xcassets */; };
 		47F96E4F2354F3490036311F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E4D2354F3490036311F /* LaunchScreen.storyboard */; };
+		7E6CBBC4283B1EF300DEFF80 /* FlipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */; };
+		7E6CBBC5283B1EF300DEFF80 /* FlipClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E422354F3480036311F /* FlipClockApp.swift */; };
+		7E6CBBC6283B1EF300DEFF80 /* DateFormatter+TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */; };
+		7E6CBBC7283B1EF300DEFF80 /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */; };
+		7E6CBBC8283B1EF800DEFF80 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBE2358F91E004E2BCA /* ClockView.swift */; };
+		7E6CBBC9283B1EF800DEFF80 /* FlipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CD2839DDD800870696 /* FlipImageView.swift */; };
+		7E6CBBCA283B1EF800DEFF80 /* FlipTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */; };
+		7E6CBBCB283B1EF800DEFF80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E462354F3480036311F /* ContentView.swift */; };
+		7E6CBBCC283B1EF800DEFF80 /* FlipTextViewHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */; };
+		7E6CBBCD283B1EF800DEFF80 /* FlipImageViewHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */; };
+		7E6CBBCE283B1F0200DEFF80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E482354F3490036311F /* Assets.xcassets */; };
+		7E6CBBCF283B1F0300DEFF80 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EF596C92839CF0900870696 /* JDFlipNumberView.bundle */; };
+		7E6CBBD1283B23C400DEFF80 /* MacOSViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */; };
+		7E6CBBD2283B23C400DEFF80 /* MacOSViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */; };
+		7E6CBBD4283B2EB600DEFF80 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CBBD3283B2EB600DEFF80 /* Colors.swift */; };
+		7E6CBBD5283B2EB600DEFF80 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6CBBD3283B2EB600DEFF80 /* Colors.swift */; };
 		7EF596CA2839CF0900870696 /* JDFlipNumberView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EF596C92839CF0900870696 /* JDFlipNumberView.bundle */; };
 		7EF596CC2839D1EA00870696 /* FlipImageViewHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */; };
 		7EF596CE2839DDD800870696 /* FlipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CD2839DDD800870696 /* FlipImageView.swift */; };
@@ -35,6 +51,9 @@
 		47F96E482354F3490036311F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47F96E4E2354F3490036311F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		47F96E502354F3490036311F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E6CBBB5283B1ECF00DEFF80 /* FlipClockMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipClockMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSViewModifiers.swift; sourceTree = "<group>"; };
+		7E6CBBD3283B2EB600DEFF80 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7EF596C92839CF0900870696 /* JDFlipNumberView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JDFlipNumberView.bundle; sourceTree = "<group>"; };
 		7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipImageViewHalf.swift; sourceTree = "<group>"; };
 		7EF596CD2839DDD800870696 /* FlipImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipImageView.swift; sourceTree = "<group>"; };
@@ -42,6 +61,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		47F96E3C2354F3480036311F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E6CBBB2283B1ECF00DEFF80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				47F96E3F2354F3480036311F /* FlipClock.app */,
+				7E6CBBB5283B1ECF00DEFF80 /* FlipClockMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +125,8 @@
 				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
 				47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */,
 				47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */,
+				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
+				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
 				47DEBECA2358FA4F004E2BCA /* Views */,
 				47DEBEC92358FA3C004E2BCA /* SupportingFiles */,
 			);
@@ -124,18 +153,38 @@
 			productReference = 47F96E3F2354F3480036311F /* FlipClock.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7E6CBBB4283B1ECF00DEFF80 /* FlipClockMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E6CBBC3283B1ED000DEFF80 /* Build configuration list for PBXNativeTarget "FlipClockMac" */;
+			buildPhases = (
+				7E6CBBB1283B1ECF00DEFF80 /* Sources */,
+				7E6CBBB2283B1ECF00DEFF80 /* Frameworks */,
+				7E6CBBB3283B1ECF00DEFF80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlipClockMac;
+			productName = FlipClockMac;
+			productReference = 7E6CBBB5283B1ECF00DEFF80 /* FlipClockMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		47F96E372354F3480036311F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Maciej Gomółka";
 				TargetAttributes = {
 					47F96E3E2354F3480036311F = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					7E6CBBB4283B1ECF00DEFF80 = {
+						CreatedOnToolsVersion = 13.4;
 					};
 				};
 			};
@@ -153,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				47F96E3E2354F3480036311F /* FlipClock */,
+				7E6CBBB4283B1ECF00DEFF80 /* FlipClockMac */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +218,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7E6CBBB3283B1ECF00DEFF80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6CBBCF283B1F0300DEFF80 /* JDFlipNumberView.bundle in Resources */,
+				7E6CBBCE283B1F0200DEFF80 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -176,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EF596CC2839D1EA00870696 /* FlipImageViewHalf.swift in Sources */,
+				7E6CBBD4283B2EB600DEFF80 /* Colors.swift in Sources */,
 				47F96E432354F3480036311F /* FlipClockApp.swift in Sources */,
 				47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */,
+				7E6CBBD1283B23C400DEFF80 /* MacOSViewModifiers.swift in Sources */,
 				47F96E472354F3480036311F /* ContentView.swift in Sources */,
 				47DEBEC72358F9D5004E2BCA /* FlipTextView.swift in Sources */,
 				47DEBEC12358F93C004E2BCA /* FlipViewModel.swift in Sources */,
@@ -185,6 +246,25 @@
 				7EF596CE2839DDD800870696 /* FlipImageView.swift in Sources */,
 				47DEBEBD2358F902004E2BCA /* DateFormatter+TimeFormatter.swift in Sources */,
 				47DEBEC32358F96A004E2BCA /* FlipTextViewHalf.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E6CBBB1283B1ECF00DEFF80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E6CBBC4283B1EF300DEFF80 /* FlipViewModel.swift in Sources */,
+				7E6CBBD5283B2EB600DEFF80 /* Colors.swift in Sources */,
+				7E6CBBC8283B1EF800DEFF80 /* ClockView.swift in Sources */,
+				7E6CBBCB283B1EF800DEFF80 /* ContentView.swift in Sources */,
+				7E6CBBD2283B23C400DEFF80 /* MacOSViewModifiers.swift in Sources */,
+				7E6CBBC5283B1EF300DEFF80 /* FlipClockApp.swift in Sources */,
+				7E6CBBC9283B1EF800DEFF80 /* FlipImageView.swift in Sources */,
+				7E6CBBC6283B1EF300DEFF80 /* DateFormatter+TimeFormatter.swift in Sources */,
+				7E6CBBCD283B1EF800DEFF80 /* FlipImageViewHalf.swift in Sources */,
+				7E6CBBCC283B1EF800DEFF80 /* FlipTextViewHalf.swift in Sources */,
+				7E6CBBC7283B1EF300DEFF80 /* ClockViewModel.swift in Sources */,
+				7E6CBBCA283B1EF800DEFF80 /* FlipTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +439,58 @@
 			};
 			name = Release;
 		};
+		7E6CBBC1283B1ED000DEFF80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Maciej Gomółka. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = calimarkus.FlipClockMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7E6CBBC2283B1ED000DEFF80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Maciej Gomółka. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = calimarkus.FlipClockMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -376,6 +508,15 @@
 			buildConfigurations = (
 				47F96E542354F3490036311F /* Debug */,
 				47F96E552354F3490036311F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E6CBBC3283B1ED000DEFF80 /* Build configuration list for PBXNativeTarget "FlipClockMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E6CBBC1283B1ED000DEFF80 /* Debug */,
+				7E6CBBC2283B1ED000DEFF80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
