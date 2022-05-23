@@ -1,8 +1,8 @@
 # A SwiftUI Flip Clock
 
-The simple app displaying the current time with a flip animation.
+The small universal (mac/iOS) app displaying the current time with a flip animation.
 
-![Screencast](https://user-images.githubusercontent.com/807039/169682230-c16cba20-6caf-4555-bbdf-417c04ca4b03.gif)
+![screencast](https://user-images.githubusercontent.com/807039/169737080-6a6dc304-5276-4788-9f57-2457f0669055.gif)
 
 ## License
 
