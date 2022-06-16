@@ -6,6 +6,4 @@ The small universal (mac/iOS) app displaying the current time with a flip animat
 
 ## License
 
-Copyright © 2019 [EL Passion](https://www.elpassion.com)
-
 License: [GNU GPLv3](LICENSE)
