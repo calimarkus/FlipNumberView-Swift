@@ -22,7 +22,7 @@ struct FlipTextView: View {
         }
         if let oldVal = viewModel.oldValue {
           FlipTextViewHalf(text: oldVal, type: .top, config: config)
-            .rotation3DEffect(.init(degrees: viewModel.animateTop ? -90 : 0),
+            .rotation3DEffect(.init(degrees: viewModel.animateTop ? -89.999 : 0),
                               axis: (1, 0, 0),
                               anchor: .bottom,
                               perspective: 0.5)
@@ -35,7 +35,7 @@ struct FlipTextView: View {
         }
         if let newVal = viewModel.newValue {
           FlipTextViewHalf(text: newVal, type: .bottom, config: config)
-            .rotation3DEffect(.init(degrees: viewModel.animateBottom ? 0 : 90),
+            .rotation3DEffect(.init(degrees: viewModel.animateBottom ? 0 : 89.999),
                               axis: (1, 0, 0),
                               anchor: .top,
                               perspective: 0.5)

@@ -14,7 +14,7 @@ struct FlipImageView: View {
         if let oldVal = viewModel.oldValue {
           FlipImageViewHalf(.top, value: Int(oldVal) ?? 0, scale: scale)
             .rotation3DEffect(
-              .init(degrees: self.viewModel.animateTop ? -90 : .zero),
+              .init(degrees: self.viewModel.animateTop ? -89.999 : .zero),
               axis: (1, 0, 0),
               anchor: .bottom,
               perspective: 0.5)
@@ -27,7 +27,7 @@ struct FlipImageView: View {
         if let newVal = viewModel.newValue {
           FlipImageViewHalf(.bottom, value: Int(newVal) ?? 0, scale: scale)
             .rotation3DEffect(
-              .init(degrees: self.viewModel.animateBottom ? .zero : 90),
+              .init(degrees: self.viewModel.animateBottom ? .zero : 89.999),
               axis: (1, 0, 0),
               anchor: .top,
               perspective: 0.5)
