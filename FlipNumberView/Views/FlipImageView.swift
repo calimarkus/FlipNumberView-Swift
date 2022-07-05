@@ -9,10 +9,10 @@ struct FlipImageView: View {
     VStack(spacing: 0) {
       ZStack {
         if let newVal = viewModel.newValue {
-          FlipImageViewHalf(.top, value: Int(newVal) ?? 0, scale: scale)
+          FlipImageViewHalf(Int(newVal) ?? 0, scale: scale, position: .top)
         }
         if let oldVal = viewModel.oldValue {
-          FlipImageViewHalf(.top, value: Int(oldVal) ?? 0, scale: scale)
+          FlipImageViewHalf(Int(oldVal) ?? 0, scale: scale, position: .top)
             .rotation3DEffect(
               .init(degrees: self.viewModel.animateTop ? -89.999 : .zero),
               axis: (1, 0, 0),
@@ -22,10 +22,10 @@ struct FlipImageView: View {
       }
       ZStack {
         if let oldVal = viewModel.oldValue {
-          FlipImageViewHalf(.bottom, value: Int(oldVal) ?? 0, scale: scale)
+          FlipImageViewHalf(Int(oldVal) ?? 0, scale: scale, position: .bottom)
         }
         if let newVal = viewModel.newValue {
-          FlipImageViewHalf(.bottom, value: Int(newVal) ?? 0, scale: scale)
+          FlipImageViewHalf(Int(newVal) ?? 0, scale: scale, position: .bottom)
             .rotation3DEffect(
               .init(degrees: self.viewModel.animateBottom ? .zero : 89.999),
               axis: (1, 0, 0),
@@ -40,8 +40,13 @@ struct FlipImageView: View {
 struct FlipImageView_Previews: PreviewProvider {
   static var previews: some View {
     let m = FlipViewModel()
-    let _ = m.updateTexts(old: "A", new: "B")
-    FlipImageView(viewModel: m, scale: 0.75)
-      .macOnlyPadding(100.0)
+    let _ = m.updateTexts(old: "0", new: "1")
+    HStack {
+      FlipImageView(viewModel: m, scale: 0.33)
+      FlipImageView(viewModel: m, scale: 0.66)
+      FlipImageView(viewModel: m)
+      FlipImageView(viewModel: m, scale: 0.66)
+      FlipImageView(viewModel: m, scale: 0.33)
+    }.macOnlyPadding(100.0)
   }
 }

@@ -3,15 +3,32 @@
 
 import SwiftUI
 
-enum FlipImageViewPosition {
-  case top
-  case bottom
-}
-
 struct FlipImageViewHalf: View {
-  let position: FlipImageViewPosition
   let value: Int
   let scale: Double
+  let position: FlipImageViewPosition
+  
+  let bundle: Bundle
+  let imageBundleName: String
+
+  init(
+    _ value: Int,
+    scale: Double = 1.0,
+    position: FlipImageViewPosition,
+    bundle: Bundle = Bundle.main,
+    imageBundleName: String = "JDFlipNumberView.bundle"
+  ) {
+    self.position = position
+    self.value = value
+    self.scale = scale
+    self.bundle = bundle
+    self.imageBundleName = imageBundleName
+  }
+
+  enum FlipImageViewPosition {
+    case top
+    case bottom
+  }
 
   var paddingEdge: Edge.Set {
     switch position {
@@ -20,15 +37,9 @@ struct FlipImageViewHalf: View {
     }
   }
 
-  init(_ position: FlipImageViewPosition, value: Int, scale: Double = 1.0) {
-    self.position = position
-    self.value = value
-    self.scale = scale
-  }
-
   var body: some View {
-    if let bundle = Bundle.main.path(forResource: "JDFlipNumberView.bundle", ofType: nil) {
-      let imagePath = bundle.appending("/\(value).png")
+    if let imageBundle = bundle.path(forResource: imageBundleName, ofType: nil) {
+      let imagePath = imageBundle.appending("/\(value).png")
       if let (image, width, height) = platformImage(imagePath: imagePath) {
         image
           .resizable()
@@ -40,7 +51,7 @@ struct FlipImageViewHalf: View {
         Text("[image n/a]")
       }
     } else {
-      Text("[bundle n/a]")
+      Text("[imageBundle n/a]")
     }
   }
 
@@ -62,24 +73,24 @@ struct FlipImageViewHalf_Previews: PreviewProvider {
   static var previews: some View {
     HStack {
       VStack(spacing: 0.0) {
-        FlipImageViewHalf(.top, value: 0, scale: 0.33)
-        FlipImageViewHalf(.bottom, value: 0, scale: 0.33)
+        FlipImageViewHalf(0, scale: 0.33, position: .top)
+        FlipImageViewHalf(0, scale: 0.33, position: .bottom)
       }
       VStack(spacing: 0.0) {
-        FlipImageViewHalf(.top, value: 1, scale: 0.66)
-        FlipImageViewHalf(.bottom, value: 1, scale: 0.66)
+        FlipImageViewHalf(1, scale: 0.66, position: .top)
+        FlipImageViewHalf(1, scale: 0.66, position: .bottom)
       }
       VStack(spacing: 0.0) {
-        FlipImageViewHalf(.top, value: 2)
-        FlipImageViewHalf(.bottom, value: 2)
+        FlipImageViewHalf(2, position: .top)
+        FlipImageViewHalf(2, position: .bottom)
       }
       VStack(spacing: 0.0) {
-        FlipImageViewHalf(.top, value: 3, scale: 0.66)
-        FlipImageViewHalf(.bottom, value: 3, scale: 0.66)
+        FlipImageViewHalf(3, scale: 0.66, position: .top)
+        FlipImageViewHalf(3, scale: 0.66, position: .bottom)
       }
       VStack(spacing: 0.0) {
-        FlipImageViewHalf(.top, value: 4, scale: 0.33)
-        FlipImageViewHalf(.bottom, value: 4, scale: 0.33)
+        FlipImageViewHalf(4, scale: 0.33, position: .top)
+        FlipImageViewHalf(4, scale: 0.33, position: .bottom)
       }
     }
     .macOnlyPadding(100.0)
