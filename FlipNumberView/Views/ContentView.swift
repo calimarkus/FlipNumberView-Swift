@@ -9,8 +9,7 @@ struct ContentView: View {
       ClockView()
       Spacer().frame(height: 10.0)
       Text("Image based:")
-      ClockView(viewModel: ClockViewModel(animationDuration: 0.66),
-                isTextBased: false, imageScale: 0.6)
+      ClockView(isTextBased: false, imageScale: 0.6)
 
       Spacer()
     }

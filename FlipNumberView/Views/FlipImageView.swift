@@ -1,37 +1,57 @@
 import SwiftUI
 
 struct FlipImageView: View {
-  @ObservedObject var viewModel: FlipViewModel
+  @Binding var value: Int
+  var scale: Double
+  var animationDuration: Double
 
-  var scale: Double = 1.0
+  // Internal State
+  @State private var currentValue: Int
+  @State private var previousValue: Int
+  @State private var animateTop: Bool = false
+  @State private var animateBottom: Bool = false
+
+  init(_ value: Binding<Int>, scale: Double = 1.0, animationDuration: Double = 0.4) {
+    self._value = value
+    self.scale = scale
+    self.animationDuration = animationDuration
+
+    self.currentValue = value.wrappedValue
+    self.previousValue = value.wrappedValue
+  }
 
   var body: some View {
     VStack(spacing: 0) {
       ZStack {
-        if let newVal = viewModel.newValue {
-          FlipImageViewHalf(Int(newVal) ?? 0, scale: scale, position: .top)
-        }
-        if let oldVal = viewModel.oldValue {
-          FlipImageViewHalf(Int(oldVal) ?? 0, scale: scale, position: .top)
-            .rotation3DEffect(
-              .init(degrees: self.viewModel.animateTop ? -89.999 : .zero),
-              axis: (1, 0, 0),
-              anchor: .bottom,
-              perspective: 0.5)
-        }
+        FlipImageViewHalf(currentValue, scale: scale, position: .top)
+        FlipImageViewHalf(previousValue, scale: scale, position: .top)
+          .rotation3DEffect(
+            .init(degrees: animateTop ? -89.999 : .zero),
+            axis: (1, 0, 0),
+            anchor: .bottom,
+            perspective: 0.5)
       }
       ZStack {
-        if let oldVal = viewModel.oldValue {
-          FlipImageViewHalf(Int(oldVal) ?? 0, scale: scale, position: .bottom)
-        }
-        if let newVal = viewModel.newValue {
-          FlipImageViewHalf(Int(newVal) ?? 0, scale: scale, position: .bottom)
-            .rotation3DEffect(
-              .init(degrees: self.viewModel.animateBottom ? .zero : 89.999),
-              axis: (1, 0, 0),
-              anchor: .top,
-              perspective: 0.5)
-        }
+        FlipImageViewHalf(previousValue, scale: scale, position: .bottom)
+        FlipImageViewHalf(currentValue, scale: scale, position: .bottom)
+          .rotation3DEffect(
+            .init(degrees: animateBottom ? .zero : 89.999),
+            axis: (1, 0, 0),
+            anchor: .top,
+            perspective: 0.5)
+      }
+    }.onChange(of: value) { newValue in
+      guard currentValue != newValue else { return }
+      previousValue = currentValue
+      animateTop = false
+      animateBottom = false
+
+      withAnimation(Animation.easeIn(duration: animationDuration / 2.0)) {
+        currentValue = newValue
+        animateTop = true
+      }
+      withAnimation(Animation.easeOut(duration: animationDuration / 2.0).delay(animationDuration / 2.0)) {
+        animateBottom = true
       }
     }
   }
@@ -39,14 +59,12 @@ struct FlipImageView: View {
 
 struct FlipImageView_Previews: PreviewProvider {
   static var previews: some View {
-    let m = FlipViewModel()
-    let _ = m.updateTexts(old: "0", new: "1")
     HStack {
-      FlipImageView(viewModel: m, scale: 0.33)
-      FlipImageView(viewModel: m, scale: 0.66)
-      FlipImageView(viewModel: m)
-      FlipImageView(viewModel: m, scale: 0.66)
-      FlipImageView(viewModel: m, scale: 0.33)
+      FlipImageView(.constant(0), scale: 0.33)
+      FlipImageView(.constant(1), scale: 0.66)
+      FlipImageView(.constant(2))
+      FlipImageView(.constant(3), scale: 0.66)
+      FlipImageView(.constant(4), scale: 0.33)
     }.macOnlyPadding(100.0)
   }
 }

@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct ClockView: View {
-  var viewModel = ClockViewModel()
+  var isTextBased = true
   var innerSpacing = 2.0
   var outerSpacing = 8.0
-  var isTextBased = true
+
+  var textBasedModel = ClockViewModel()
+  @ObservedObject var imageBasedModel = ClockModel()
   var imageScale = 1.0
-  var config = FlipTextViewConfig(fontSize: 50.0)
 
   var body: some View {
     HStack(spacing: outerSpacing) {
@@ -27,11 +28,13 @@ struct ClockView: View {
 
   @ViewBuilder
   func flipViewAtIndex(_ idx: Int) -> some View {
-    let viewModel = viewModel.flipViewModels[idx]
     if isTextBased {
-      FlipTextView(viewModel: viewModel, config: config)
+      FlipTextView(viewModel: textBasedModel.flipViewModels[idx],
+                   config: FlipTextViewConfig(fontSize: 50.0))
     } else {
-      FlipImageView(viewModel: viewModel, scale: imageScale)
+      FlipImageView($imageBasedModel.values[idx],
+                    scale: imageScale,
+                    animationDuration: 0.66)
     }
   }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28EEB5F4287578A3000C340F /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB5F3287578A3000C340F /* ClockModel.swift */; };
+		28EEB5F5287578A3000C340F /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB5F3287578A3000C340F /* ClockModel.swift */; };
 		47DEBEBB2358F8C4004E2BCA /* ClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */; };
 		47DEBEBD2358F902004E2BCA /* DateFormatter+TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */; };
 		47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBE2358F91E004E2BCA /* ClockView.swift */; };
@@ -39,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28EEB5F3287578A3000C340F /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewModel.swift; sourceTree = "<group>"; };
 		47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+TimeFormatter.swift"; sourceTree = "<group>"; };
 		47DEBEBE2358F91E004E2BCA /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 				47F96E422354F3480036311F /* FlipClockApp.swift */,
 				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
 				47DEBEBA2358F8C4004E2BCA /* ClockViewModel.swift */,
+				28EEB5F3287578A3000C340F /* ClockModel.swift */,
 				47DEBEC02358F93C004E2BCA /* FlipViewModel.swift */,
 				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
 				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
@@ -233,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EEB5F4287578A3000C340F /* ClockModel.swift in Sources */,
 				7EF596CC2839D1EA00870696 /* FlipImageViewHalf.swift in Sources */,
 				7E6CBBD4283B2EB600DEFF80 /* Colors.swift in Sources */,
 				47F96E432354F3480036311F /* FlipClockApp.swift in Sources */,
@@ -252,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EEB5F5287578A3000C340F /* ClockModel.swift in Sources */,
 				7E6CBBC4283B1EF300DEFF80 /* FlipViewModel.swift in Sources */,
 				7E6CBBD5283B2EB600DEFF80 /* Colors.swift in Sources */,
 				7E6CBBC8283B1EF800DEFF80 /* ClockView.swift in Sources */,
