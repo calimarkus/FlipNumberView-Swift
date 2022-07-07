@@ -71,6 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28FC44ED2876DA31003AC084 /* FlipViews */ = {
+			isa = PBXGroup;
+			children = (
+				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
+				28EEB5F3287578A3000C340F /* ClockModel.swift */,
+				47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */,
+				47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */,
+				7EF596CD2839DDD800870696 /* FlipImageView.swift */,
+				7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */,
+			);
+			path = FlipViews;
+			sourceTree = "<group>";
+		};
 		47DEBEC92358FA3C004E2BCA /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,17 +95,14 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		47DEBECA2358FA4F004E2BCA /* Views */ = {
+		47DEBECA2358FA4F004E2BCA /* AppViews */ = {
 			isa = PBXGroup;
 			children = (
 				47F96E462354F3480036311F /* ContentView.swift */,
 				47DEBEBE2358F91E004E2BCA /* ClockView.swift */,
-				47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */,
-				47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */,
-				7EF596CD2839DDD800870696 /* FlipImageView.swift */,
-				7EF596CB2839D1EA00870696 /* FlipImageViewHalf.swift */,
+				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
 			);
-			path = Views;
+			path = AppViews;
 			sourceTree = "<group>";
 		};
 		47F96E362354F3480036311F = {
@@ -116,10 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				47F96E422354F3480036311F /* FlipClockApp.swift */,
-				28EEB5F3287578A3000C340F /* ClockModel.swift */,
-				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
-				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
-				47DEBECA2358FA4F004E2BCA /* Views */,
+				47DEBECA2358FA4F004E2BCA /* AppViews */,
+				28FC44ED2876DA31003AC084 /* FlipViews */,
 				47DEBEC92358FA3C004E2BCA /* SupportingFiles */,
 			);
 			path = FlipNumberView;
