@@ -5,8 +5,8 @@ struct ClockView: View {
   var innerSpacing = 2.0
   var outerSpacing = 8.0
 
-  @ObservedObject var textBasedModel = ClockViewModel()
-  @ObservedObject var imageBasedModel = ClockModel()
+  @ObservedObject var textBasedModel = ClockModel { $0 }
+  @ObservedObject var imageBasedModel = ClockModel { Int(String($0)) ?? 0 }
   var imageScale = 1.0
 
   var body: some View {

@@ -2,12 +2,15 @@ import Combine
 import Foundation
 import SwiftUI
 
-class ClockModel: ObservableObject {
-  @Published var values: [Int] = []
+class ClockModel<T>: ObservableObject {
+  @Published var values: [T] = []
+  var valueMapper: (Character) -> T
+
   private var cancellables = Set<AnyCancellable>()
   private let timeFormatter = DateFormatter.timeFormatter
 
-  init() {
+  init(valueMapper: @escaping (Character) -> T) {
+    self.valueMapper = valueMapper
     setupTimer()
     updateCharacterMap(timeFormatter.string(from: Date()))
   }
@@ -22,6 +25,6 @@ class ClockModel: ObservableObject {
   }
 
   private func updateCharacterMap(_ time: String) {
-    values = Array(time).map { Int(String($0)) ?? 0 }
+    values = Array(time).map(valueMapper)
   }
 }
