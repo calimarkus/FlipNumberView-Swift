@@ -9,7 +9,7 @@ class ClockModel: ObservableObject {
 
   init() {
     setupTimer()
-    updateIntsForTime(timeFormatter.string(from: Date()))
+    updateCharacterMap(timeFormatter.string(from: Date()))
   }
 
   private func setupTimer() {
@@ -17,11 +17,11 @@ class ClockModel: ObservableObject {
       .autoconnect()
       .map { [timeFormatter] in timeFormatter.string(from: $0) }
       .removeDuplicates()
-      .sink(receiveValue: { [weak self] in self?.updateIntsForTime($0) })
+      .sink(receiveValue: { [weak self] in self?.updateCharacterMap($0) })
       .store(in: &cancellables)
   }
 
-  private func updateIntsForTime(_ time: String) {
+  private func updateCharacterMap(_ time: String) {
     values = Array(time).map { Int(String($0)) ?? 0 }
   }
 }

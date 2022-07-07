@@ -5,7 +5,7 @@ struct ClockView: View {
   var innerSpacing = 2.0
   var outerSpacing = 8.0
 
-  var textBasedModel = ClockViewModel()
+  @ObservedObject var textBasedModel = ClockViewModel()
   @ObservedObject var imageBasedModel = ClockModel()
   var imageScale = 1.0
 
@@ -29,7 +29,7 @@ struct ClockView: View {
   @ViewBuilder
   func flipViewAtIndex(_ idx: Int) -> some View {
     if isTextBased {
-      FlipTextView(viewModel: textBasedModel.flipViewModels[idx],
+      FlipTextView($textBasedModel.values[idx],
                    config: FlipTextViewConfig(fontSize: 50.0))
     } else {
       FlipImageView($imageBasedModel.values[idx],

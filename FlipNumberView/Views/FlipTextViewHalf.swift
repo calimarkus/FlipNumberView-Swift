@@ -2,7 +2,7 @@ import SwiftUI
 
 struct FlipTextViewHalf: View {
   // content
-  let text: String
+  let text: Character
 
   // config
   let type: FlipType
@@ -14,7 +14,7 @@ struct FlipTextViewHalf: View {
   }
 
   var body: some View {
-    Text(text)
+    Text(String(text))
       .font(.custom("Helvetica", size: config.fontSize)
         .weight(.heavy))
       .foregroundColor(config.textColor)

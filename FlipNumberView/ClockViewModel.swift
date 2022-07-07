@@ -2,18 +2,14 @@ import Combine
 import Foundation
 import SwiftUI
 
-class ClockViewModel {
-  let animationDuration: Double
-  let flipViewModels: [FlipViewModel]
+class ClockViewModel: ObservableObject {
+  @Published var values: [Character] = []
+  private var cancellables = Set<AnyCancellable>()
+  private let timeFormatter = DateFormatter.timeFormatter
 
-  init(animationDuration: Double = 0.4) {
-    self.animationDuration = animationDuration
-    self.flipViewModels = (0 ... 5).map { _ in
-      FlipViewModel(duration: animationDuration, text: "0")
-    }
-
+  init() {
     setupTimer()
-    setTimeInViewModels(time: timeFormatter.string(from: Date()))
+    updateCharacterMap(timeFormatter.string(from: Date()))
   }
 
   private func setupTimer() {
@@ -21,16 +17,11 @@ class ClockViewModel {
       .autoconnect()
       .map { [timeFormatter] in timeFormatter.string(from: $0) }
       .removeDuplicates()
-      .sink(receiveValue: { [weak self] in self?.setTimeInViewModels(time: $0) })
+      .sink(receiveValue: { [weak self] in self?.updateCharacterMap($0) })
       .store(in: &cancellables)
   }
 
-  private func setTimeInViewModels(time: String) {
-    zip(time, flipViewModels).forEach { number, viewModel in
-      viewModel.text = "\(number)"
-    }
+  private func updateCharacterMap(_ time: String) {
+    values = Array(time)
   }
-
-  private var cancellables = Set<AnyCancellable>()
-  private let timeFormatter = DateFormatter.timeFormatter
 }
