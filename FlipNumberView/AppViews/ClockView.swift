@@ -29,8 +29,11 @@ struct ClockView: View {
   @ViewBuilder
   func flipViewAtIndex(_ idx: Int) -> some View {
     if isTextBased {
-      FlipTextView($textBasedModel.values[idx],
-                   config: FlipTextViewConfig(fontSize: 50.0))
+      let config = FlipTextViewConfig(backgroundColor: Color.clockBackgroundColor,
+                                      textColor: Color.clockTextColor,
+                                      fontSize: 50.0,
+                                      animationDuration: 0.4)
+      FlipTextView($textBasedModel.values[idx], config: config)
     } else {
       FlipImageView($imageBasedModel.values[idx],
                     scale: imageScale,

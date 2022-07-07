@@ -101,11 +101,6 @@ struct FlipTextViewHalf_Previews: PreviewProvider {
         Spacer().frame(height: 1.0)
         FlipTextViewHalf(text: "3", type: .bottom, config: config2)
       }.fixedSize()
-    }
-    .preferredColorScheme(.light)
-    .macOnlyPadding(50.0)
-
-    HStack {
       VStack(spacing: 0.0) {
         FlipTextViewHalf(text: "2", type: .top, config: config3)
         Spacer().frame(height: 1.0)
@@ -117,7 +112,6 @@ struct FlipTextViewHalf_Previews: PreviewProvider {
         FlipTextViewHalf(text: "1", type: .bottom, config: config4)
       }.fixedSize()
     }
-    .preferredColorScheme(.dark)
     .macOnlyPadding(50.0)
   }
 }
