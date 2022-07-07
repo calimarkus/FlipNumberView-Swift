@@ -7,10 +7,13 @@ class ClockModel<T>: ObservableObject {
   var valueMapper: (Character) -> T
 
   private var cancellables = Set<AnyCancellable>()
-  private let timeFormatter = DateFormatter.timeFormatter
+  private let timeFormatter: DateFormatter
 
   init(valueMapper: @escaping (Character) -> T) {
     self.valueMapper = valueMapper
+    self.timeFormatter = DateFormatter()
+    self.timeFormatter.dateFormat = "HHmmss"
+
     setupTimer()
     updateCharacterMap(timeFormatter.string(from: Date()))
   }

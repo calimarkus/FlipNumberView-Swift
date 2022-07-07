@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		28EEB5F4287578A3000C340F /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB5F3287578A3000C340F /* ClockModel.swift */; };
 		28EEB5F5287578A3000C340F /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EEB5F3287578A3000C340F /* ClockModel.swift */; };
-		47DEBEBD2358F902004E2BCA /* DateFormatter+TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */; };
 		47DEBEBF2358F91E004E2BCA /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBE2358F91E004E2BCA /* ClockView.swift */; };
 		47DEBEC32358F96A004E2BCA /* FlipTextViewHalf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */; };
 		47DEBEC72358F9D5004E2BCA /* FlipTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */; };
@@ -18,7 +17,6 @@
 		47F96E492354F3490036311F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E482354F3490036311F /* Assets.xcassets */; };
 		47F96E4F2354F3490036311F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96E4D2354F3490036311F /* LaunchScreen.storyboard */; };
 		7E6CBBC5283B1EF300DEFF80 /* FlipClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96E422354F3480036311F /* FlipClockApp.swift */; };
-		7E6CBBC6283B1EF300DEFF80 /* DateFormatter+TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */; };
 		7E6CBBC8283B1EF800DEFF80 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEBE2358F91E004E2BCA /* ClockView.swift */; };
 		7E6CBBC9283B1EF800DEFF80 /* FlipImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF596CD2839DDD800870696 /* FlipImageView.swift */; };
 		7E6CBBCA283B1EF800DEFF80 /* FlipTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */; };
@@ -38,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		28EEB5F3287578A3000C340F /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
-		47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+TimeFormatter.swift"; sourceTree = "<group>"; };
 		47DEBEBE2358F91E004E2BCA /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextViewHalf.swift; sourceTree = "<group>"; };
 		47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipTextView.swift; sourceTree = "<group>"; };
@@ -119,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				47F96E422354F3480036311F /* FlipClockApp.swift */,
-				47DEBEBC2358F902004E2BCA /* DateFormatter+TimeFormatter.swift */,
 				28EEB5F3287578A3000C340F /* ClockModel.swift */,
 				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
 				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
@@ -238,7 +234,6 @@
 				47F96E472354F3480036311F /* ContentView.swift in Sources */,
 				47DEBEC72358F9D5004E2BCA /* FlipTextView.swift in Sources */,
 				7EF596CE2839DDD800870696 /* FlipImageView.swift in Sources */,
-				47DEBEBD2358F902004E2BCA /* DateFormatter+TimeFormatter.swift in Sources */,
 				47DEBEC32358F96A004E2BCA /* FlipTextViewHalf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +249,6 @@
 				7E6CBBD2283B23C400DEFF80 /* MacOSViewModifiers.swift in Sources */,
 				7E6CBBC5283B1EF300DEFF80 /* FlipClockApp.swift in Sources */,
 				7E6CBBC9283B1EF800DEFF80 /* FlipImageView.swift in Sources */,
-				7E6CBBC6283B1EF300DEFF80 /* DateFormatter+TimeFormatter.swift in Sources */,
 				7E6CBBCD283B1EF800DEFF80 /* FlipImageViewHalf.swift in Sources */,
 				7E6CBBCC283B1EF800DEFF80 /* FlipTextViewHalf.swift in Sources */,
 				7E6CBBCA283B1EF800DEFF80 /* FlipTextView.swift in Sources */,
