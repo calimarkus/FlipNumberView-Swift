@@ -14,17 +14,34 @@ struct FlipTextViewHalf: View {
   }
 
   var body: some View {
-    Text(String(text))
-      .font(.custom("Helvetica", size: config.fontSize)
-        .weight(.heavy))
-      .foregroundColor(config.textColor)
-      .padding(type.clippingEdge, round(config.fontSize / self.fontClippingAmount))
-      .padding(type.verticalPaddingEdge, max(self.maxVerticalClipping, (80 - config.fontSize) / 5.0))
-      .padding([.leading, .trailing], 10.0)
-      .clipped()
-      .background(config.backgroundColor, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-      .padding(type.clippingEdge, round(config.fontSize / -12.0))
-      .clipped()
+    let font = Font.custom("Helvetica", fixedSize: config.fontSize).weight(.heavy)
+    let clippingPadding = round(config.fontSize / self.fontClippingAmount)
+    let outerPadding = max(self.minVerticalClipping, (80 - config.fontSize) / 5.0)
+    let horizontalPadding = 10.0
+    let backgroundPadding = round(config.fontSize / -12.0)
+    let backgroundShape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+
+    Group {
+      switch type {
+      case .top:
+        Text(String(text))
+          .padding(.bottom, clippingPadding)
+          .padding(.top, outerPadding)
+          .padding([.leading, .trailing], horizontalPadding)
+          .background(config.backgroundColor, in: backgroundShape)
+          .padding(.bottom, backgroundPadding)
+      case .bottom:
+        Text(String(text))
+          .padding(.top, clippingPadding)
+          .padding(.bottom, outerPadding)
+          .padding([.leading, .trailing], horizontalPadding)
+          .background(config.backgroundColor, in: backgroundShape)
+          .padding(.top, backgroundPadding)
+      }
+    }
+    .font(font)
+    .foregroundColor(config.textColor)
+    .clipped()
   }
 
   var fontClippingAmount: Double {
@@ -35,7 +52,7 @@ struct FlipTextViewHalf: View {
     #endif
   }
 
-  var maxVerticalClipping: Double {
+  var minVerticalClipping: Double {
     #if os(macOS)
     return 10.0
     #else
@@ -46,33 +63,6 @@ struct FlipTextViewHalf: View {
   enum FlipType {
     case top
     case bottom
-
-    var clippingEdge: Edge.Set {
-      switch self {
-      case .top:
-        return .bottom
-      case .bottom:
-        return .top
-      }
-    }
-
-    var verticalPaddingEdge: Edge.Set {
-      switch self {
-      case .top:
-        return [.top]
-      case .bottom:
-        return [.bottom]
-      }
-    }
-
-    var alignment: Alignment {
-      switch self {
-      case .top:
-        return .bottom
-      case .bottom:
-        return .top
-      }
-    }
   }
 }
 
