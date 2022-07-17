@@ -75,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				7E6CBBD0283B23C400DEFF80 /* MacOSViewModifiers.swift */,
-				28EEB5F3287578A3000C340F /* ClockModel.swift */,
 				47DEBEC62358F9D5004E2BCA /* FlipTextView.swift */,
 				47DEBEC22358F96A004E2BCA /* FlipTextViewHalf.swift */,
 				7EF596CD2839DDD800870696 /* FlipImageView.swift */,
@@ -100,6 +99,7 @@
 			children = (
 				47F96E462354F3480036311F /* ContentView.swift */,
 				47DEBEBE2358F91E004E2BCA /* ClockView.swift */,
+				28EEB5F3287578A3000C340F /* ClockModel.swift */,
 				7E6CBBD3283B2EB600DEFF80 /* Colors.swift */,
 			);
 			path = AppViews;
