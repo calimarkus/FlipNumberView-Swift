@@ -15,19 +15,18 @@ class ClockModel<T>: ObservableObject {
     self.timeFormatter.dateFormat = "HHmmss"
 
     setupTimer()
-    updateCharacterMap(timeFormatter.string(from: Date()))
+    mapValues(Date())
   }
 
   private func setupTimer() {
     Timer.publish(every: 1, on: .main, in: .default)
       .autoconnect()
-      .map { [timeFormatter] in timeFormatter.string(from: $0) }
-      .removeDuplicates()
-      .sink(receiveValue: { [weak self] in self?.updateCharacterMap($0) })
+      .sink(receiveValue: { [weak self] in self?.mapValues($0) })
       .store(in: &cancellables)
   }
 
-  private func updateCharacterMap(_ time: String) {
-    values = Array(time).map(valueMapper)
+  private func mapValues(_ date: Date) {
+    let dateString = timeFormatter.string(from: date)
+    values = Array(dateString).map(valueMapper)
   }
 }
