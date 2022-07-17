@@ -14,8 +14,8 @@ struct FlipTextViewHalf: View {
   }
 
   var body: some View {
-    let font = Font.custom("Helvetica", fixedSize: config.fontSize).weight(.heavy)
-    let clippingPadding = round(config.fontSize / self.fontClippingAmount)
+    let font = Font.system(size: config.fontSize).weight(.heavy).monospaced()
+    let clippingPadding = round(config.fontSize / -1.95)
     let outerPadding = max(self.minVerticalClipping, (80 - config.fontSize) / 5.0)
     let horizontalPadding = 10.0
     let backgroundPadding = round(config.fontSize / -12.0)
@@ -42,14 +42,6 @@ struct FlipTextViewHalf: View {
     .font(font)
     .foregroundColor(config.textColor)
     .clipped()
-  }
-
-  var fontClippingAmount: Double {
-    #if os(macOS)
-    return -2.4
-    #else
-    return -2.0
-    #endif
   }
 
   var minVerticalClipping: Double {
