@@ -8,7 +8,7 @@ This is still WIP and doesn't support everything, that the Obj-C + UIKit version
 
 | Dark Mode (macOS) | Light Mode (macOS) |
 | --- | --- |
-| <img src="https://user-images.githubusercontent.com/807039/185739423-28b53c91-78be-46b0-b673-4ccb7c29f709.gif" width="460" /> | <img src="https://user-images.githubusercontent.com/807039/185739645-b637ae70-04fe-4ffa-808b-868dc92ede8f.gif" width="460" /> |
+| <img src="https://user-images.githubusercontent.com/807039/185739423-28b53c91-78be-46b0-b673-4ccb7c29f709.gif" /> | <img src="https://user-images.githubusercontent.com/807039/185739645-b637ae70-04fe-4ffa-808b-868dc92ede8f.gif" /> |
 
 ## License
 
